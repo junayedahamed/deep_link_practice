@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
@@ -7,6 +9,7 @@ class ProductDetails extends StatelessWidget {
   final String productId;
   @override
   Widget build(BuildContext context) {
+    // log('Product ID: $productId');
     final String deepLink =
         'https://fl-deep-link-host.vercel.app/product/$productId';
 

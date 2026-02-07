@@ -7,7 +7,8 @@ class ProductDetails extends StatelessWidget {
   final String productId;
   @override
   Widget build(BuildContext context) {
-    final String deepLink = 'https://vwapi.imurad.me/product/$productId';
+    final String deepLink =
+        'https://fl-deep-link-host.vercel.app/product/$productId';
 
     return SafeArea(
       bottom: true,

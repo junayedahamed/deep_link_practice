@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:share_plus/share_plus.dart';
+
+class ProductDetails extends StatelessWidget {
+  const ProductDetails({super.key, required this.productId});
+  final String productId;
+  @override
+  Widget build(BuildContext context) {
+    final String deepLink = 'https://vwapi.imurad.me/product/$productId';
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Product Details'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.copy),
+            onPressed: () {
+              // Copy full deep link to clipboard
+              Clipboard.setData(ClipboardData(text: deepLink));
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Deep link copied to clipboard')),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () {
+              // Share the product deep link
+              Share.share('Check out this product: $deepLink');
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Detailed information about the product $productId goes here.',
+              style: const TextStyle(fontSize: 18),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 20),
+            SelectableText(
+              'Link: $deepLink',
+              style: const TextStyle(
+                color: Colors.blue,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

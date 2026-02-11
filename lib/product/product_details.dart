@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key, required this.productId});
   final String productId;
-  //dkjds
+
   @override
   Widget build(BuildContext context) {
     // log('Product ID: $productId');

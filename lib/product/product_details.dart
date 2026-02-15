@@ -13,7 +13,7 @@ class ProductDetails extends StatelessWidget {
     final String deepLink =
         'https://fl-deep-link-host.vercel.app/product/$productId';
 
-    // Check if user came from deep link (no navigation history)
+   
     final bool cameFromDeepLink = !context.canPop();
 
     return SafeArea(

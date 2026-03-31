@@ -28,7 +28,7 @@ class ProductDetails extends StatelessWidget {
                   onPressed: () => context.go('/'),
                   tooltip: 'Go to Home',
                 )
-              : null, // Use default back button
+              : null, 
           actions: [
             IconButton(
               icon: const Icon(Icons.copy),
